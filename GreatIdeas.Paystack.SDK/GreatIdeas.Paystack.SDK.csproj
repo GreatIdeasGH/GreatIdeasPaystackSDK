@@ -14,8 +14,11 @@
 		<PackageProjectUrl>https://github.com/geraldmaale/GreatIdeasPaystackSdk</PackageProjectUrl>
 		<PackageTags>RESTful, payment, httpclient, Paystack payment API, Paystack, paystack, GreatIdeas, greatideas</PackageTags>
 		<Product>Paystack SDK</Product>
-		<Version>0.0.1</Version>
+		<Version>1.0.0</Version>
 		<PackageIconUrl>https://paystack.com/favicon.png</PackageIconUrl>
+		<PackageVersion>1.0.0</PackageVersion>
+		<Title>GreatIdeas.Paystack.SDK</Title>
+		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 	</PropertyGroup>
 
 	<ItemGroup>

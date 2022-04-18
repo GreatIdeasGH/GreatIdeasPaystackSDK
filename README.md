@@ -1,44 +1,33 @@
 # <img src="https://paystack.com/favicon.png" height="40"/> GreatIdeas.Paystack.SDK
 
-[![Version](https://img.shields.io/nuget/vpre/Paystack.Net.SDK)](https://www.nuget.org/packages/Paystack.Net.SDK)
-[![Downloads](https://img.shields.io/nuget/dt/Paystack.Net.SDK)](https://www.nuget.org/packages/Paystack.Net.SDK)
-[![Build Status](https://travis-ci.org/Paystack/Paystack.Net.SDK.svg?branch=master)](https://travis-ci.org/Paystack/Paystack.Net.SDK)
+[//]: # ([![Version]&#40;https://img.shields.io/nuget/vpre/GreatIdeas.Paystack.SDK&#41;]&#40;https://www.nuget.org/packages/GreatIdeas.Paystack.SDK&#41;)
+[//]: # ([![Downloads]&#40;https://img.shields.io/nuget/dt/GreatIdeas.Paystack.SDK&#41;]&#40;https://www.nuget.org/packages/GreatIdeas.Paystack.SDK&#41;)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 # What is it?
 This is the .Net wrapper for [Paystack](https://paystack.com) RESTful API. It is a simple library that allows you to easily integrate Paystack's payment gateway into your application for African countries (Nigeria, Ghana, South Africa) and accepting international currencies (USD).
 
 # API Endpoints
-- **Transactions**
-  - [Initialize Transaction](https://paystack.com/docs/api/#transaction-initialize)
-  - [Verify Transaction](https://paystack.com/docs/api/#transaction-verify)
-  - [List Transactions](https://paystack.com/docs/api/#transaction-list)
-  - [Fetch Transaction](https://paystack.com/docs/api/#transaction-fetch)
-  - [Charge Authorization](https://paystack.com/docs/api/#transaction-charge-authorization)
-  - [Check Authorization](https://paystack.com/docs/api/#transaction-check-authorization)
-  - [View Transaction Timeline](https://paystack.com/docs/api/#transaction-timeline)
-  - [Transaction Totals](https://paystack.com/docs/api/#transaction-totals)
-  - [Export Transactions](https://paystack.com/docs/api/#transaction-export)
-  - [Partial Debit](https://paystack.com/docs/api/#transaction-partial-debit)
-- Transaction Splits]
-- Customer
-- Dedicated Virtual Account
-- Subaccount
-- Plan
-- Subscription
-- Product
-- Page
-- Payment Request
-- Settlement
-- Transfer Recipient
-- Transfer
-- Balance
-- Charge
-- Bulk Charge
-- Integration
-- Refund
-- Dispute
-- Verification
+- [Transactions](https://paystack.com/docs/api/#transaction)
+- [Transaction Splits](https://paystack.com/docs/api/#transaction-split)
+- [Customer](https://paystack.com/docs/api/#customer)
+- [Dedicated Virtual Account](https://paystack.com/docs/api/#dedicated-virtual-account)
+- [Subaccount](https://paystack.com/docs/api/#subaccount)
+- [Plan](https://paystack.com/docs/api/#plan)
+- [Subscription](https://paystack.com/docs/api/#subscription)
+- [Product](https://paystack.com/docs/api/#product)
+- [Page](https://paystack.com/docs/api/#page)
+- [Payment Request](https://paystack.com/docs/api/#payment-request)
+- [Settlement](https://paystack.com/docs/api/#settlement)
+- [Transfer Recipient](https://paystack.com/docs/api/#transfer-recipient)
+- [Transfer](https://paystack.com/docs/api/#transfer)
+- [Balance](https://paystack.com/docs/api/#balance)
+- [Charge](https://paystack.com/docs/api/#charge)
+- [Bulk Charge](https://paystack.com/docs/api/#bulk-charge)
+- [Integration](https://paystack.com/docs/api/#integration)
+- [Refund](https://paystack.com/docs/api/#refund)
+- [Dispute](https://paystack.com/docs/api/#dispute)
+- [Verification](https://paystack.com/docs/api/#verification)
 
 # Getting Started
 This section will briefly guide you through the steps to get started with the library.
