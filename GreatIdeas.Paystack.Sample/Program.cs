@@ -1,7 +1,6 @@
 using GreatIdeas.Paystack.Sample.Resources;
 using GreatIdeas.Paystack.SDK;
 using GreatIdeas.Paystack.SDK.Models.Transactions;
-using GreatIdeas.Paystack.SDK.Resources.Transactions;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
