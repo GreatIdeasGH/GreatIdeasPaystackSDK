@@ -59,13 +59,20 @@ public class TransactionData
 
     [JsonProperty("source")] public TransactionSourceData? Source { get; set; }
 
-    [JsonProperty("fees_breakdown")] public string? FeesBreakdown { get; set; }
+    [JsonProperty("fees_breakdown")] public List<FeesBreakdownData>? FeesBreakdown { get; set; }
 
     [JsonProperty("customer")] public CustomerData? Customer { get; set; }
 
     [JsonProperty("authorization")] public TransactionAuthorizationData? Authorization { get; set; }
 
     [JsonProperty("log")] public TransactionLogData? Log { get; set; }
+}
+
+public class FeesBreakdownData
+{
+    [JsonProperty("amount")] int Amount { get; set; }
+    [JsonProperty("formula")] object? Formula { get; set; }
+    [JsonProperty("type")] string? Type { get; set; }
 }
 
 public class TransactionSourceData

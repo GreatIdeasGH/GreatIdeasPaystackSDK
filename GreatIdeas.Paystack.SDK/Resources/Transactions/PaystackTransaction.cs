@@ -4,6 +4,7 @@ using GreatIdeas.Paystack.SDK.Models;
 using GreatIdeas.Paystack.SDK.Models.Transactions;
 using GreatIdeas.Paystack.SDK.Responses.Transactions;
 using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 
 namespace GreatIdeas.Paystack.SDK.Resources.Transactions;
@@ -11,10 +12,12 @@ namespace GreatIdeas.Paystack.SDK.Resources.Transactions;
 public class PaystackTransaction : IPaystackTransaction
 {
     private readonly HttpClient _httpClient;
+    private readonly ILogger<PaystackTransaction> _logger;
 
-    public PaystackTransaction(IHttpClientFactory httpClientFactory)
+    public PaystackTransaction(IHttpClientFactory httpClientFactory, ILogger<PaystackTransaction> logger)
     {
         _httpClient = httpClientFactory.CreateClient(PaystackConstants.PaystackHttpClientName);
+        _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     }
 
 
@@ -35,10 +38,14 @@ public class PaystackTransaction : IPaystackTransaction
 
             var response = await _httpClient.PostAsJsonAsync(PaystackConstants.TransactionInitialize, requestModel,
                 cancellationToken);
-            return JsonConvert.DeserializeObject<TransactionInitializeResponse>(await response.Content.ReadAsStringAsync(cancellationToken));
+            var content = JsonConvert.DeserializeObject<TransactionInitializeResponse>(await response.Content.ReadAsStringAsync(cancellationToken));
+
+            _logger.LogInformation("Paystack initialization successful with Reference: {PaystackReference}", content!.Data!.Reference);
+            return content;
         }
         catch (Exception exception)
         {
+            _logger.LogCritical(exception, "Paystack transaction initialization failed.");
             throw new ApiException(exception.Message, 422);
         }
     }
@@ -54,7 +61,9 @@ public class PaystackTransaction : IPaystackTransaction
     {
         try
         {
-            var response = await _httpClient.GetAsync($"{PaystackConstants.TransactionVerify}/{reference}", cancellationToken);
+            _httpClient.BaseAddress = new Uri("https://api.paystack.co/");
+            var response = await _httpClient.GetAsync($"transaction/verify/{reference}");
+            //var response = await _httpClient.GetAsync($"{PaystackConstants.TransactionVerify}/{reference}", cancellationToken);
             if (!response.IsSuccessStatusCode)
             {
                 return new TransactionVerifyResponse
@@ -63,12 +72,15 @@ public class PaystackTransaction : IPaystackTransaction
                     Message = response.ReasonPhrase!
                 };
             }
-            
+
             var content = JsonConvert.DeserializeObject<TransactionVerifyResponse>(await response.Content.ReadAsStringAsync(cancellationToken));
+
+            _logger.LogInformation("Paystack verification successful with Id: {PaystackReference}", content?.Data!.Id);
             return content!;
         }
         catch (Exception exception)
         {
+            _logger.LogCritical(exception, "Paystack transaction verification failed.");
             throw new ApiException(exception.Message, 422);
         }
     }
@@ -160,7 +172,7 @@ public class PaystackTransaction : IPaystackTransaction
                     Message = response.ReasonPhrase!
                 };
             }
-            
+
             var content = JsonConvert.DeserializeObject<TransactionResponse>(await response.Content.ReadAsStringAsync(cancellationToken));
             return content!;
         }
@@ -190,7 +202,7 @@ public class PaystackTransaction : IPaystackTransaction
                     Message = response.ReasonPhrase!
                 };
             }
-            
+
             var content = JsonConvert.DeserializeObject<TransactionLogResponse>(await response.Content.ReadAsStringAsync(cancellationToken));
             return content!;
         }
@@ -362,7 +374,7 @@ public class PaystackTransaction : IPaystackTransaction
                     Message = response.ReasonPhrase!
                 };
             }
-            
+
             var content = JsonConvert.DeserializeObject<Response>(await response.Content.ReadAsStringAsync(cancellationToken));
             return content!;
         }
@@ -392,7 +404,7 @@ public class PaystackTransaction : IPaystackTransaction
                     Message = response.ReasonPhrase!
                 };
             }
-            
+
             var content = JsonConvert.DeserializeObject<Response>(await response.Content.ReadAsStringAsync(cancellationToken));
             return content!;
         }
@@ -401,7 +413,7 @@ public class PaystackTransaction : IPaystackTransaction
             throw new ApiException(exception.Message, 422);
         }
     }
-    
+
     private static Dictionary<string, string?> QueryString(PagingParams pagingParams)
     {
         var queryString = new Dictionary<string, string?>();
@@ -427,7 +439,7 @@ public class PaystackTransaction : IPaystackTransaction
 
         return queryString;
     }
-    
+
     private static Dictionary<string, string?> QueryString(int? perPage, int? page, DateTime? from, DateTime? to)
     {
         var queryString = new Dictionary<string, string?>();

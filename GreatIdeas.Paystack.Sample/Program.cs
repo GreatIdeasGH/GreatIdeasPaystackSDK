@@ -59,7 +59,7 @@ app.MapGet("/transaction/{id}", async ([FromServices] Transaction paystack, stri
     .WithName("FetchTransaction");
 
 app.MapGet("/transaction/totals", async (
-        [FromServices] Transaction paystack, 
+        [FromServices] Transaction paystack,
         int? perPage, int? page, DateTime? from, DateTime? to) =>
     {
         var result = await paystack.Totals(perPage, page, from, to, CancellationToken.None);
@@ -68,7 +68,7 @@ app.MapGet("/transaction/totals", async (
     .WithName("TransactionTotals");
 
 app.MapGet("/transaction/timeline/{idReference}", async (
-        [FromServices] Transaction paystack, 
+        [FromServices] Transaction paystack,
         string idReference) =>
     {
         var result = await paystack.Timeline(idReference, CancellationToken.None);

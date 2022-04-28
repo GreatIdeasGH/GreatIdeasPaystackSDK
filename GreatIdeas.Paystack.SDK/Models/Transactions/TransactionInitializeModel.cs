@@ -3,6 +3,18 @@
 public class TransactionInitializeModel
 {
     /// <summary>
+    /// Customer First Name
+    /// </summary>
+    [Newtonsoft.Json.JsonProperty("firstname", Required = Newtonsoft.Json.Required.Always)]
+    public string? FirstName { get; set; }
+
+    /// <summary>
+    /// Customer Last Name
+    /// </summary>
+    [Newtonsoft.Json.JsonProperty("lastname", Required = Newtonsoft.Json.Required.Always)]
+    public string? LastName { get; set; }
+
+    /// <summary>
     /// Customer's email address
     /// </summary>
     [Newtonsoft.Json.JsonProperty("email", Required = Newtonsoft.Json.Required.Always)]
