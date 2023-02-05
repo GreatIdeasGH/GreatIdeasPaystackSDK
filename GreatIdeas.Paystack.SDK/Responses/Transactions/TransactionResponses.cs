@@ -13,7 +13,7 @@ public class TransactionResponse
 
 public class TransactionData
 {
-    [JsonProperty("id")] public int Id { get; set; }
+    [JsonProperty("id")] public long Id { get; set; }
 
     [JsonProperty("domain")] public string? Domain { get; set; }
 

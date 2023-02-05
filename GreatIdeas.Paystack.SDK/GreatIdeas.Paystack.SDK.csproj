@@ -14,9 +14,9 @@
 		<PackageProjectUrl>https://github.com/geraldmaale/GreatIdeasPaystackSdk</PackageProjectUrl>
 		<PackageTags>RESTful, payment, httpclient, Paystack payment API, Paystack, paystack, GreatIdeas, greatideas</PackageTags>
 		<Product>Paystack SDK</Product>
-		<Version>1.0.1</Version>
+		<Version>1.0.2</Version>
 		<PackageIconUrl>https://paystack.com/favicon.png</PackageIconUrl>
-		<PackageVersion>1.0.1</PackageVersion>
+		<PackageVersion>1.0.2</PackageVersion>
 		<Title>GreatIdeas.Paystack.SDK</Title>
 		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
 	</PropertyGroup>
@@ -28,6 +28,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="2.2.0" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Http.Polly" Version="6.0.4" />
 		<PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
@@ -104,13 +105,5 @@
 		<None Remove="Resources\Product\**" />
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Reference Include="Microsoft.AspNetCore.Http.Abstractions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
-	    <HintPath>C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\6.0.4\Microsoft.AspNetCore.Http.Abstractions.dll</HintPath>
-	  </Reference>
-	  <Reference Include="Microsoft.AspNetCore.WebUtilities, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60">
-	    <HintPath>C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\6.0.4\Microsoft.AspNetCore.WebUtilities.dll</HintPath>
-	  </Reference>
-	</ItemGroup>
 
 </Project>

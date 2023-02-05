@@ -1,11 +1,11 @@
-﻿using System.Net.Http.Json;
-using GreatIdeas.Paystack.SDK.Contracts;
+﻿using GreatIdeas.Paystack.SDK.Contracts;
 using GreatIdeas.Paystack.SDK.Models;
 using GreatIdeas.Paystack.SDK.Models.Transactions;
 using GreatIdeas.Paystack.SDK.Responses.Transactions;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
+using System.Net.Http.Json;
 
 namespace GreatIdeas.Paystack.SDK.Resources.Transactions;
 
