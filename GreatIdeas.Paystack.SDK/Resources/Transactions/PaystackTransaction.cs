@@ -61,9 +61,7 @@ public class PaystackTransaction : IPaystackTransaction
     {
         try
         {
-            _httpClient.BaseAddress = new Uri("https://api.paystack.co/");
-            var response = await _httpClient.GetAsync($"transaction/verify/{reference}");
-            //var response = await _httpClient.GetAsync($"{PaystackConstants.TransactionVerify}/{reference}", cancellationToken);
+            var response = await _httpClient.GetAsync($"{PaystackConstants.TransactionVerify}/{reference}", cancellationToken);
             if (!response.IsSuccessStatusCode)
             {
                 return new TransactionVerifyResponse

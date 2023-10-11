@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var secretKey = builder.Configuration["Paystack:SecretKey"];
+var secretKey = builder.Configuration["Paystack:SecretKey"]!;
 
 // Add services to the container.
 builder.Services.AddEndpointsApiExplorer();

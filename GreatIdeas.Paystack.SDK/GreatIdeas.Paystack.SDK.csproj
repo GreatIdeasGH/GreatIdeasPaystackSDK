@@ -1,109 +1,101 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
-		<Authors>Gerald Maale</Authors>
-		<Description>
+  <PropertyGroup>
+    <TargetFrameworks>net7.0;net8.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Authors>Gerald Maale</Authors>
+    <Description>
 			This is the .Net wrapper for Paystack Payment API. It is a simple library that allows you to easily integrate Paystack's payment gateway into your application.
 		</Description>
-		<Copyright>Copyright 2022</Copyright>
-		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<RepositoryUrl>https://github.com/geraldmaale/GreatIdeasPaystackSdk</RepositoryUrl>
-		<PackageProjectUrl>https://github.com/geraldmaale/GreatIdeasPaystackSdk</PackageProjectUrl>
-		<PackageTags>RESTful, payment, httpclient, Paystack payment API, Paystack, paystack, GreatIdeas, greatideas</PackageTags>
-		<Product>Paystack SDK</Product>
-		<Version>1.0.2</Version>
-		<PackageIconUrl>https://paystack.com/favicon.png</PackageIconUrl>
-		<PackageVersion>1.0.2</PackageVersion>
-		<Title>GreatIdeas.Paystack.SDK</Title>
-		<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-	</PropertyGroup>
-
-	<ItemGroup>
-		<Folder Include="Models\Balances\" />
-		<Folder Include="Models\Integrations\" />
-		<Folder Include="Models\Settlements" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="2.2.0" />
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
-		<PackageReference Include="Microsoft.Extensions.Http.Polly" Version="6.0.4" />
-		<PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
-		<PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Compile Remove="Resources\Plans\**" />
-		<Compile Remove="Resources\Subscriptions\**" />
-		<Compile Remove="Resources\Pages\**" />
-		<Compile Remove="Resources\Miscellaneous\**" />
-		<Compile Remove="Resources\Integration\**" />
-		<Compile Remove="Resources\Customers\**" />
-		<Compile Remove="Resources\Balance\**" />
-		<Compile Remove="Resources\Refunds\**" />
-		<Compile Remove="Resources\Charge\**" />
-		<Compile Remove="Resources\Subaccounts\**" />
-		<Compile Remove="Resources\PaymentRequest\**" />
-		<Compile Remove="Resources\BulkCharge\**" />
-		<Compile Remove="Resources\DedicatedVirtualAccount\**" />
-		<Compile Remove="Resources\TransfersRecipients\**" />
-		<Compile Remove="Resources\Settlements\**" />
-		<Compile Remove="Resources\Transfers\**" />
-		<Compile Remove="Resources\Split\**" />
-		<Compile Remove="Resources\Verification\**" />
-		<Compile Remove="Resources\Dispute\**" />
-		<Compile Remove="Resources\Product\**" />
-		<Compile Remove="Resources\Transactions\TransactionClient.cs" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<EmbeddedResource Remove="Resources\Plans\**" />
-		<EmbeddedResource Remove="Resources\Subscriptions\**" />
-		<EmbeddedResource Remove="Resources\Pages\**" />
-		<EmbeddedResource Remove="Resources\Miscellaneous\**" />
-		<EmbeddedResource Remove="Resources\Integration\**" />
-		<EmbeddedResource Remove="Resources\Customers\**" />
-		<EmbeddedResource Remove="Resources\Balance\**" />
-		<EmbeddedResource Remove="Resources\Refunds\**" />
-		<EmbeddedResource Remove="Resources\Charge\**" />
-		<EmbeddedResource Remove="Resources\Subaccounts\**" />
-		<EmbeddedResource Remove="Resources\PaymentRequest\**" />
-		<EmbeddedResource Remove="Resources\BulkCharge\**" />
-		<EmbeddedResource Remove="Resources\DedicatedVirtualAccount\**" />
-		<EmbeddedResource Remove="Resources\TransfersRecipients\**" />
-		<EmbeddedResource Remove="Resources\Settlements\**" />
-		<EmbeddedResource Remove="Resources\Transfers\**" />
-		<EmbeddedResource Remove="Resources\Split\**" />
-		<EmbeddedResource Remove="Resources\Verification\**" />
-		<EmbeddedResource Remove="Resources\Dispute\**" />
-		<EmbeddedResource Remove="Resources\Product\**" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<None Remove="Resources\Plans\**" />
-		<None Remove="Resources\Subscriptions\**" />
-		<None Remove="Resources\Pages\**" />
-		<None Remove="Resources\Miscellaneous\**" />
-		<None Remove="Resources\Integration\**" />
-		<None Remove="Resources\Customers\**" />
-		<None Remove="Resources\Balance\**" />
-		<None Remove="Resources\Refunds\**" />
-		<None Remove="Resources\Charge\**" />
-		<None Remove="Resources\Subaccounts\**" />
-		<None Remove="Resources\PaymentRequest\**" />
-		<None Remove="Resources\BulkCharge\**" />
-		<None Remove="Resources\DedicatedVirtualAccount\**" />
-		<None Remove="Resources\TransfersRecipients\**" />
-		<None Remove="Resources\Settlements\**" />
-		<None Remove="Resources\Transfers\**" />
-		<None Remove="Resources\Split\**" />
-		<None Remove="Resources\Verification\**" />
-		<None Remove="Resources\Dispute\**" />
-		<None Remove="Resources\Product\**" />
-	</ItemGroup>
-
-
+    <Copyright>Copyright 2022</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/geraldmaale/GreatIdeasPaystackSdk</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/geraldmaale/GreatIdeasPaystackSdk</PackageProjectUrl>
+    <PackageTags>RESTful, payment, httpclient, Paystack payment API, Paystack, paystack, GreatIdeas, greatideas</PackageTags>
+    <Product>Paystack SDK</Product>
+    <Version>1.0.3</Version>
+    <PackageIconUrl>https://paystack.com/favicon.png</PackageIconUrl>
+    <PackageVersion>1.0.3</PackageVersion>
+    <Title>GreatIdeas.Paystack.SDK</Title>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Models\Balances\" />
+    <Folder Include="Models\Integrations\" />
+    <Folder Include="Models\Settlements" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.WebUtilities" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="7.0.11" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Resources\Plans\**" />
+    <Compile Remove="Resources\Subscriptions\**" />
+    <Compile Remove="Resources\Pages\**" />
+    <Compile Remove="Resources\Miscellaneous\**" />
+    <Compile Remove="Resources\Integration\**" />
+    <Compile Remove="Resources\Customers\**" />
+    <Compile Remove="Resources\Balance\**" />
+    <Compile Remove="Resources\Refunds\**" />
+    <Compile Remove="Resources\Charge\**" />
+    <Compile Remove="Resources\Subaccounts\**" />
+    <Compile Remove="Resources\PaymentRequest\**" />
+    <Compile Remove="Resources\BulkCharge\**" />
+    <Compile Remove="Resources\DedicatedVirtualAccount\**" />
+    <Compile Remove="Resources\TransfersRecipients\**" />
+    <Compile Remove="Resources\Settlements\**" />
+    <Compile Remove="Resources\Transfers\**" />
+    <Compile Remove="Resources\Split\**" />
+    <Compile Remove="Resources\Verification\**" />
+    <Compile Remove="Resources\Dispute\**" />
+    <Compile Remove="Resources\Product\**" />
+    <Compile Remove="Resources\Transactions\TransactionClient.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Remove="Resources\Plans\**" />
+    <EmbeddedResource Remove="Resources\Subscriptions\**" />
+    <EmbeddedResource Remove="Resources\Pages\**" />
+    <EmbeddedResource Remove="Resources\Miscellaneous\**" />
+    <EmbeddedResource Remove="Resources\Integration\**" />
+    <EmbeddedResource Remove="Resources\Customers\**" />
+    <EmbeddedResource Remove="Resources\Balance\**" />
+    <EmbeddedResource Remove="Resources\Refunds\**" />
+    <EmbeddedResource Remove="Resources\Charge\**" />
+    <EmbeddedResource Remove="Resources\Subaccounts\**" />
+    <EmbeddedResource Remove="Resources\PaymentRequest\**" />
+    <EmbeddedResource Remove="Resources\BulkCharge\**" />
+    <EmbeddedResource Remove="Resources\DedicatedVirtualAccount\**" />
+    <EmbeddedResource Remove="Resources\TransfersRecipients\**" />
+    <EmbeddedResource Remove="Resources\Settlements\**" />
+    <EmbeddedResource Remove="Resources\Transfers\**" />
+    <EmbeddedResource Remove="Resources\Split\**" />
+    <EmbeddedResource Remove="Resources\Verification\**" />
+    <EmbeddedResource Remove="Resources\Dispute\**" />
+    <EmbeddedResource Remove="Resources\Product\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Resources\Plans\**" />
+    <None Remove="Resources\Subscriptions\**" />
+    <None Remove="Resources\Pages\**" />
+    <None Remove="Resources\Miscellaneous\**" />
+    <None Remove="Resources\Integration\**" />
+    <None Remove="Resources\Customers\**" />
+    <None Remove="Resources\Balance\**" />
+    <None Remove="Resources\Refunds\**" />
+    <None Remove="Resources\Charge\**" />
+    <None Remove="Resources\Subaccounts\**" />
+    <None Remove="Resources\PaymentRequest\**" />
+    <None Remove="Resources\BulkCharge\**" />
+    <None Remove="Resources\DedicatedVirtualAccount\**" />
+    <None Remove="Resources\TransfersRecipients\**" />
+    <None Remove="Resources\Settlements\**" />
+    <None Remove="Resources\Transfers\**" />
+    <None Remove="Resources\Split\**" />
+    <None Remove="Resources\Verification\**" />
+    <None Remove="Resources\Dispute\**" />
+    <None Remove="Resources\Product\**" />
+  </ItemGroup>
 </Project>

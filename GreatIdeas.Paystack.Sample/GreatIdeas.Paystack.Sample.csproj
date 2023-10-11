@@ -1,18 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>d7f0e716-6451-4e5d-b084-78ebbf4a3667</UserSecretsId>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\GreatIdeas.Paystack.SDK\GreatIdeas.Paystack.SDK.csproj" />
   </ItemGroup>
-
 </Project>
